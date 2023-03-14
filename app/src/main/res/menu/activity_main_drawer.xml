@@ -7,14 +7,34 @@
         <item
             android:id="@+id/nav_home"
             android:icon="@drawable/ic_menu_camera"
-            android:title="@string/menu_home" />
+            android:title="الرئيسيه" />
         <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="@string/menu_gallery" />
+            android:id="@+id/nav_whatW"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="من نحن" />
         <item
-            android:id="@+id/nav_slideshow"
+            android:id="@+id/nav_earnings"
+            android:icon="@drawable/mony"
+            android:title="أرباحي" />
+        <item
+            android:id="@+id/nav_credit"
             android:icon="@drawable/ic_menu_slideshow"
-            android:title="@string/menu_slideshow" />
+            android:title="رصيدي" />
+        <item
+            android:id="@+id/nav_travels"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="رحلاتي" />
+        <item
+            android:id="@+id/nav_Notices"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="الإشعارات " />
+        <item
+            android:id="@+id/nav_Help"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="مركز المساعدة " />
+        <item
+            android:id="@+id/nav_signout"
+            android:icon="@drawable/baseline_logout_24"
+            android:title="تسجيل الخروج " />
     </group>
 </menu>

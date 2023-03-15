@@ -6,31 +6,31 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_home"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/baseline_home_24"
             android:title="الرئيسيه" />
         <item
-            android:id="@+id/nav_whatW"
-            android:icon="@drawable/ic_menu_camera"
+            android:id="@+id/nav_whatWe"
+            android:icon="@drawable/about"
             android:title="من نحن" />
         <item
             android:id="@+id/nav_earnings"
-            android:icon="@drawable/mony"
+            android:icon="@drawable/earning"
             android:title="أرباحي" />
         <item
             android:id="@+id/nav_credit"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/my_credit"
             android:title="رصيدي" />
         <item
             android:id="@+id/nav_travels"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/trips"
             android:title="رحلاتي" />
         <item
             android:id="@+id/nav_Notices"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/bell"
             android:title="الإشعارات " />
         <item
             android:id="@+id/nav_Help"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/baseline_help_outline_24"
             android:title="مركز المساعدة " />
         <item
             android:id="@+id/nav_signout"

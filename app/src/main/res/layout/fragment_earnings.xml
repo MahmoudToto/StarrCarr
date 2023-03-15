@@ -5,19 +5,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/earnings"
-    tools:context=".ui.gallery.GalleryFragment">
-
+    tools:context=".ui.Earnings.EarningsFragment">
 
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
-        android:layout_width="@dimen/_130sdp"
+        android:layout_width="@dimen/_125sdp"
         android:layout_height="@dimen/_130sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
         android:layout_marginStart="@dimen/_20sdp"
         android:backgroundTint="@color/main_color"
         app:cardCornerRadius="@dimen/_15sdp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/cardView2"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -38,7 +38,7 @@
             android:fontFamily="@font/cairo_bold"
             android:text="عدد الرحلات"
             android:textColor="@color/white"
-            android:textSize="@dimen/_18ssp" />
+            android:textSize="@dimen/_16ssp" />
 
         <TextView
             android:layout_width="match_parent"
@@ -54,7 +54,7 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView2"
-        android:layout_width="@dimen/_130sdp"
+        android:layout_width="@dimen/_125sdp"
         android:layout_height="@dimen/_130sdp"
         android:layout_marginEnd="@dimen/_20sdp"
         android:backgroundTint="@color/main_color"
@@ -81,7 +81,7 @@
             android:fontFamily="@font/cairo_bold"
             android:text="الأرباح"
             android:textColor="@color/white"
-            android:textSize="@dimen/_18ssp" />
+            android:textSize="@dimen/_16ssp" />
 
         <TextView
             android:layout_width="match_parent"
@@ -96,14 +96,15 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
-        android:layout_width="@dimen/_130sdp"
+        android:layout_width="@dimen/_125sdp"
         android:layout_height="@dimen/_130sdp"
         android:layout_marginStart="@dimen/_20sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
         android:layout_marginTop="@dimen/_15sdp"
         android:backgroundTint="@color/main_color"
         app:cardCornerRadius="@dimen/_15sdp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/cardView4"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardView"
@@ -124,7 +125,7 @@
             android:fontFamily="@font/cairo_bold"
             android:text="الكود الخاص بي"
             android:textColor="@color/white"
-            android:textSize="@dimen/_18ssp" />
+            android:textSize="@dimen/_16ssp" />
 
         <TextView
             android:layout_width="match_parent"
@@ -139,7 +140,8 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
-        android:layout_width="@dimen/_130sdp"
+        android:id="@+id/cardView4"
+        android:layout_width="@dimen/_125sdp"
         android:layout_height="@dimen/_130sdp"
         android:layout_marginTop="@dimen/_15sdp"
         android:layout_marginEnd="@dimen/_20sdp"
@@ -151,6 +153,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardView2"
         app:layout_constraintVertical_bias="0.0">
+
         <ImageView
             android:layout_width="@dimen/_60sdp"
             android:layout_height="@dimen/_60sdp"
@@ -166,7 +169,7 @@
             android:fontFamily="@font/cairo_bold"
             android:text="عدد المشتركين"
             android:textColor="@color/white"
-            android:textSize="@dimen/_18ssp" />
+            android:textSize="@dimen/_16ssp" />
 
         <TextView
             android:layout_width="match_parent"
@@ -179,6 +182,7 @@
             android:textColor="@color/black"
             android:textSize="@dimen/_18sdp" />
     </androidx.cardview.widget.CardView>
+
     <ImageView
         android:layout_width="@dimen/_100sdp"
         android:layout_height="@dimen/_100sdp"

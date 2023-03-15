@@ -30,16 +30,17 @@ class Registratiion : AppCompatActivity() {
                 var password = password.text.toString()
                 var generationcode = genertecode.text.toString()
                 val userdata = UserData(
-                    FirebaseAuth.getInstance().uid.toString(),
+                    "",
                     firstName = firstname,
                     lastName = lastname,
                     email = email,
                     phone = phone,
                     password = password,
-                    invitationCode = generationcode,
+                    invitationCode = "123223",
+
                     profitpercentage = 2,
                     numberOfTrips = 2,
-                    numberOfsubscribers = 3
+                    numberOfsubscribers = 0
 
                 )
                 createEmailAndSetData(email, password, userdata)
@@ -52,57 +53,59 @@ class Registratiion : AppCompatActivity() {
     private fun createEmailAndSetData(email: String, password: String, userData: UserData) {
         FirebaseAuth.getInstance().createUserWithEmailAndPassword(email, password)
             .addOnSuccessListener {
-                Toast.makeText(applicationContext, FirebaseAuth.getInstance().uid, Toast.LENGTH_SHORT).show()
+                userData.id = FirebaseAuth.getInstance().currentUser!!.uid
 
                 setData(userData)
                 searchValueFromDB("123")
             }.addOnFailureListener {
-            Toast.makeText(
-                applicationContext,
-                "Error${it.message.toString()}",
-                Toast.LENGTH_SHORT
-            ).show()
+                Toast.makeText(
+                    applicationContext,
+                    "Error${it.message.toString()}",
+                    Toast.LENGTH_SHORT
+                ).show()
 
-            Log.d("error", it.message.toString())
-        }
+                Log.d("error", it.message.toString())
+            }
     }
 
     private fun setData(userData: UserData) {
         FirebaseDatabase.getInstance().getReference("Users")
-            .child( FirebaseAuth.getInstance().uid.toString())
+            .child(FirebaseAuth.getInstance().currentUser!!.uid.toString())
             .setValue(userData).addOnSuccessListener {
             }.addOnFailureListener {
 
             }
 
     }
-    private fun increaseProfitPercentageUsingSubscription(invitaionCode:String){
+
+    private fun increaseProfitPercentageUsingSubscription(invitaionCode: String) {
 
     }
-    private fun searchValueFromDB(ccode:String){
-        val updates: MutableMap<String, Any> = HashMap()
 
-
+    private fun searchValueFromDB(ccode: String) {
         val mDatabase = FirebaseDatabase.getInstance().getReference("Users")
-        mDatabase.orderByChild("invitationCode").equalTo(ccode).addListenerForSingleValueEvent(object :
-            ValueEventListener {
-            override fun onDataChange(snapshot: DataSnapshot) {
-                Toast.makeText(applicationContext,"Search was soo gooood",Toast.LENGTH_SHORT).show()
+        mDatabase.orderByChild("invitationCode").equalTo(ccode)
+            .addListenerForSingleValueEvent(object :
+                ValueEventListener {
+                override fun onDataChange(snapshot: DataSnapshot) {
+                    Toast.makeText(applicationContext, "Search was soo gooood", Toast.LENGTH_SHORT)
+                        .show()
 
-                for (data in snapshot.children) {
-                    val models: UserData? = data.getValue(UserData::class.java)
-                       Log.d("idUSer",models!!.id)
-//                    FirebaseDatabase.getInstance().getReference("Users").child(models!!.id)
-//                        .child("profitpercentage").setValue(9)
+                    for (data in snapshot.children) {
+                        val models: UserData? = data.getValue(UserData::class.java);
+                        Log.d("name", models!!.firstName)
+                        val subscrip = models.numberOfsubscribers + 1
+                        FirebaseDatabase.getInstance().getReference("Users").child(models!!.id)
+                            .child("numberOfsubscribers").setValue(subscrip)
 
 
+                    }
                 }
-            }
 
-            override fun onCancelled(error: DatabaseError) {
-                TODO("Not yet implemented")
-            }
-        })
+                override fun onCancelled(error: DatabaseError) {
+                    TODO("Not yet implemented")
+                }
+            })
 
     }
 }

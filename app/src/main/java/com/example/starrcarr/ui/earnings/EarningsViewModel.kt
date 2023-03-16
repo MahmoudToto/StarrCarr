@@ -1,4 +1,4 @@
-package com.example.starrcarr.ui.Earnings
+package com.example.starrcarr.ui.earnings
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

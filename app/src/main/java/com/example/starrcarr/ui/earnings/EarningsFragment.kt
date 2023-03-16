@@ -1,17 +1,16 @@
-package com.example.starrcarr.ui.WhatWe
+package com.example.starrcarr.ui.earnings
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.example.starrcarr.databinding.FragmentWhatWeBinding
+import com.example.starrcarr.databinding.FragmentEarningsBinding
 
-class WhatWeFragment : Fragment() {
+class EarningsFragment : Fragment() {
 
-    private var _binding: FragmentWhatWeBinding? = null
+    private var _binding: FragmentEarningsBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -22,16 +21,13 @@ class WhatWeFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val whatWeViewModel =
-            ViewModelProvider(this).get(WhatWeViewModel::class.java)
+        val earningsViewModel =
+            ViewModelProvider(this).get(EarningsViewModel::class.java)
 
-        _binding = FragmentWhatWeBinding.inflate(inflater, container, false)
+        _binding = FragmentEarningsBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textSlideshow
-        whatWeViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
-        }
+
         return root
     }
 

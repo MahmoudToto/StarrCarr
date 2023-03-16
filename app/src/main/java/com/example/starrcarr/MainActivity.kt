@@ -1,7 +1,6 @@
 package com.example.starrcarr
 
 import android.os.Bundle
-import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -13,7 +12,7 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.starrcarr.databinding.ActivityMainBinding
-import com.example.starrcarr.ui.Earnings.EarningsFragment
+import com.example.starrcarr.ui.earnings.EarningsFragment
 import com.example.starrcarr.ui.home.HomeFragment
 import com.google.android.material.navigation.NavigationView
 

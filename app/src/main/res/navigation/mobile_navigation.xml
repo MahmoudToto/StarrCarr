@@ -3,20 +3,50 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_home">
+    app:startDestination="@id/registratiion">
 
     <fragment
         android:id="@+id/nav_home"
         android:name="com.example.starrcarr.ui.home.HomeFragment"
         tools:layout="@layout/fragment_home" >
 
+        <action
+            android:id="@+id/action_nav_home_to_signIn"
+            app:destination="@id/signInFragment" />
     </fragment>
 
     <fragment
         android:id="@+id/nav_earnings"
-        android:name="com.example.starrcarr.ui.Earnings.EarningsFragment"
+        android:name="com.example.starrcarr.ui.earnings.EarningsFragment"
         tools:layout="@layout/fragment_earnings" >
 
+    </fragment>
+    <fragment
+        android:id="@+id/splachScreen"
+        android:name="com.example.starrcarr.SplachScreen"
+        tools:layout="@layout/fragment_splach_screen" >
+        <action
+            android:id="@+id/action_splachScreen_to_signIn"
+            app:destination="@id/signInFragment" />
+        <action
+            android:id="@+id/action_splachScreen_to_registratiion"
+            app:destination="@id/registratiion" />
+    </fragment>
+    <fragment
+        android:id="@+id/signInFragment"
+        android:name="com.example.starrcarr.sinIn.SignIn"
+        tools:layout="@layout/fragment_sign_in" >
+        <action
+            android:id="@+id/action_signIn_to_nav_home"
+            app:destination="@id/nav_home" />
+    </fragment>
+    <fragment
+        android:id="@+id/registratiion"
+        android:name="com.example.starrcarr.register.Registratiion"
+        tools:layout="@layout/fragment_registratiion" >
+        <action
+            android:id="@+id/action_registratiion_to_nav_home"
+            app:destination="@id/nav_home" />
     </fragment>
 
 </navigation>

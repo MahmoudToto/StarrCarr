@@ -7,5 +7,4 @@
     android:background="@drawable/maps"
     tools:context=".ui.home.HomeFragment">
 
-
 </androidx.constraintlayout.widget.ConstraintLayout>

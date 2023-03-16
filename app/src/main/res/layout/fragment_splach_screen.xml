@@ -23,7 +23,7 @@
 
     <TextView
         android:layout_width="@dimen/_250sdp"
-        android:layout_height="@dimen/_60sdp"
+        android:layout_height="@dimen/_50sdp"
         android:background="@drawable/text_splach_shape"
         android:backgroundTint="@color/white"
         android:fontFamily="@font/cairo_bold"

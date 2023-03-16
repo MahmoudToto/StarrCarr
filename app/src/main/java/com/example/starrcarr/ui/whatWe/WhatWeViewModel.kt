@@ -1,4 +1,4 @@
-package com.example.starrcarr.ui.WhatWe
+package com.example.starrcarr.ui.whatWe
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
